@@ -12,6 +12,7 @@ export const loadSummarizationChain = (llm, params = { type: "map_reduce" }) => 
             documentVariableName: "text",
             verbose,
         });
+        console.log('stuff')
         return chain;
     }
     if (params.type === "map_reduce") {
@@ -34,6 +35,7 @@ export const loadSummarizationChain = (llm, params = { type: "map_reduce" }) => 
             returnIntermediateSteps,
             verbose,
         });
+        console.log('map_reduce')
         return chain;
     }
     if (params.type === "refine") {
@@ -50,6 +52,7 @@ export const loadSummarizationChain = (llm, params = { type: "map_reduce" }) => 
             documentVariableName: "text",
             verbose,
         });
+        console.log('refine')
         return chain;
     }
     throw new Error(`Invalid _type: ${params.type}`);
